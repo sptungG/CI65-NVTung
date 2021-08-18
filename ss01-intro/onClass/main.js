@@ -47,4 +47,14 @@ $no.addEventListener("mouseover", function () {
 // 1 project ~ 15 chức năng
 // 1 vài chức năng ko phù hợp với thực tế -> phản biện vì sao chức năng đó ko hợp lý
 
-
+  // // VD
+  // const  btnn = document.getElementById("btn")
+  // btnn.addEventListener("click",(event)=>{
+  //     console.log(event)
+  //     console.log(this)
+  // })
+  // // ARROW function != function
+  // btnn.addEventListener("click",function(event){
+  //     console.log(event)
+  //     console.log(this)
+  // })
