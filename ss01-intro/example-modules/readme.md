@@ -1,3 +1,3 @@
 ## DEMO
 
-![.\demo.png](.\demo.png)
+![demo.png](demo.png)
