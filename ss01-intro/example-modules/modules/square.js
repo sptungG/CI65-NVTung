@@ -13,13 +13,17 @@ class Square {
     this.$shape.style.width = length;
     this.$shape.style.height = length;
     this.$shape.style.backgroundColor = this.color;
-    document.getElementById(this.listId).appendChild(this.$shape);
   }
 
   reportArea() {
-    this.$area = document.createElement("li");
+    this.$area = document.createElement("h4");
     this.$area.textContent = `${this.name} area is ${this.length * this.length}px squared.`;
-    document.getElementById(this.listId).appendChild(this.$area);
+  }
+  render() {
+    let reportElement = document.createElement("li");
+    reportElement.appendChild(this.$shape);
+    reportElement.appendChild(this.$area);
+    document.getElementById(this.listId).appendChild(reportElement);
   }
 }
 
