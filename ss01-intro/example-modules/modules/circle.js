@@ -10,9 +10,9 @@ class Circle {
   }
   draw() {
     this.$shape = document.createElement("div");
-    let radius = this.radius * 2 + "px";
-    this.$shape.style.width = radius;
-    this.$shape.style.height = radius;
+    let diameter = this.radius * 2 + "px";
+    this.$shape.style.width = diameter;
+    this.$shape.style.height = diameter;
     this.$shape.style.backgroundColor = this.color;
     this.$shape.style.borderRadius = "50%";
   }
