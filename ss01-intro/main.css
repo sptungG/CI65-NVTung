@@ -1,0 +1,64 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+/* using rem unit */
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+/*  */
+.container {
+  max-width: 100rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem;
+}
+.question {
+  font-size: 4rem;
+  background: linear-gradient(to right, #1565c0, #b92b27);
+  color: #fff;
+  height: 30rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-buttons {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.button {
+  margin-right: 1rem;
+  padding: 2rem 3rem;
+  display: inline-block;
+  text-align: center;
+  background-color: #fff;
+  color: #111;
+  font-size: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #a0a0a0;
+  width: 33.33%;
+  cursor: pointer;
+  outline: none;
+}
+.yes:hover {
+  background: #b92b27;
+  border: 0;
+  color: #fff;
+}
+.no:hover {
+  background-color: #1565c0;
+  border: 0;
+  color: #fff;
+}
+.reverse {
+  flex-direction: row-reverse;
+}
