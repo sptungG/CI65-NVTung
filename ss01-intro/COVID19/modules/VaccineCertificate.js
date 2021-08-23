@@ -42,8 +42,7 @@ class VaccineCertificate {
 
       // dưới 18t -> chưa được tiêm
       if (person.ageGroup == "Child") {
-        person.poseStatus = `${person.name}: Too Young `;
-        return;
+        return person.poseStatus = `${person.name}: Too Young `;
       } else {
         // trên 18t và người già -> đc tiêm
         person.vaccineChecked = true;
@@ -51,7 +50,6 @@ class VaccineCertificate {
         // ko đc tiêm quá 2 mũi
         if (person.poseStatus.length > 2) {
           console.log(`${person.name}: Over dose suggested`);
-          return;
         } else {
           // kiểm tra nhập trùng ngày tiêm -> chỉ lầy lần đầu
           let [state1, state2] = person.poseStatus;
