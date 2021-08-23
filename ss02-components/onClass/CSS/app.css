@@ -1,24 +1,23 @@
-.container{
-  max-width: 100rem;
-  padding: 0 3rem;
-}
 .navbar {
   display: flex;
   flex-wrap: wrap;
   margin-left: -3rem;
   background-color: #fff;
-  height: 3rem;
+  height: 6rem;
   border-bottom: 2px solid #999;
+  padding: 0 5rem;
 }
 .navbar > * {
   margin-left: 3rem;
   width: calc(50% - 3rem);
 }
+.navbar-brand{
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+}
 .navbar-nav{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-}
-.navbar-link{
-  color: black;
 }
