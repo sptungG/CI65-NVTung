@@ -31,7 +31,7 @@ vaccineCertificate.vaccineStatus("G", "Sinovac", "Mon Jul 26 2021 04:30:39 GMT+0
 vaccineCertificate.vaccineStatus("H", "Sinovac", "Mon Jul 26 2021 04:30:39 GMT+0700 (Indochina Time)");
 
 console.table(vaccineCertificate.vaccineInfo);
-console.table(vaccineCertificate.personInfo, ["name", "age", "address", "vaccineChecked","poseStatus"]);
+console.table(vaccineCertificate.personInfo, ["name", "age", "address", "vaccineChecked", "poseStatus"]);
 
 // Thống kê những người dân đã được tiêm ít nhất 1 loại vắc-xin
 function showVerified() {
@@ -67,8 +67,8 @@ showNotVerifiedByAge("older");
 function totalPose() {
   let people = vaccineCertificate.personInfo.filter((person) => person.vaccineChecked == true);
   let total = 0;
-  for (const index in people) {
-    total += people[index].poseStatus.length;
+  for (const element of people) {
+    total += element.poseStatus.length;
   }
   console.log(`\n----Tổng số liều vắc-xin đã tiêm: ${total}`);
 }

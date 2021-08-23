@@ -7,10 +7,10 @@ class Person {
     this.ageGroup = function () {
       if (this.age < 18) {
         return "Child";
-      } else if (this.age >= 18 && this.age < 65) {
-        return "Adult";
-      } else {
+      } else if (this.age >= 65) {
         return "Older";
+      } else {
+        return "Adult";
       }
     };
   }
