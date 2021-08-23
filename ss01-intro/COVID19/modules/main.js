@@ -16,7 +16,8 @@ let person5 = new Person("E", 66, "female", "USA");
 let person6 = new Person("F", 68, "female", "USA");
 let person7 = new Person("G", 16, "male", "USA");
 
-let vaccineCertificate = new VaccineCertificate();
+// MAX_NUMBERS_ORDERED
+let vaccineCertificate = new VaccineCertificate(6);
 vaccineCertificate.add(vaccine1, vaccine2, vaccine3, vaccine4, vaccine5);
 vaccineCertificate.add(person1, person2, person3, person4, person5, person6, person7);
 vaccineCertificate.vaccineStatus("A", "Moderna", "Mon Jul 26 2021 04:29:39 GMT+0700 (Indochina Time)");

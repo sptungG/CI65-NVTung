@@ -3,17 +3,24 @@ import Vaccine from "./Vaccine.js";
 class VaccineCertificate {
   personInfo;
   vaccineInfo;
-  constructor() {
+  constructor(MAX_NUMBERS_ORDERED) {
+    this.MAX_NUMBERS_ORDERED = MAX_NUMBERS_ORDERED;
     this.personInfo = [];
     this.vaccineInfo = [];
   }
   add(...input) {
     for (const index in input) {
       if (input[index] instanceof Person) {
-        input[index].ageGroup = input[index].ageGroup();
-        input[index].vaccineChecked = false;
-        input[index].poseStatus = [];
-        this.personInfo.push(input[index]);
+        if(this.personInfo.length < this.MAX_NUMBERS_ORDERED){
+          input[index].ageGroup = input[index].ageGroup();
+          input[index].vaccineChecked = false;
+          input[index].poseStatus = [];
+          this.personInfo.push(input[index]);
+          console.log(`++ ${input[index].name} - ${input[index].age} - ${input[index].address} is added.`);
+        }else{
+          console.warn(`[FULL]:( .Can't add ${input[index].name} - ${input[index].age} - ${input[index].address}.`);
+        }
+
       } else if (input[index] instanceof Vaccine) {
         this.vaccineInfo.push(input[index]);
       }
@@ -22,6 +29,7 @@ class VaccineCertificate {
 
   vaccineStatus(personName, vaccineName = "", poseDate = "") {
     const index = this.personInfo.findIndex((person) => person.name == personName);
+    // Kiểm tra người đã đăng kí hay chưa
     if (index >= 0) {
       const indexV = this.vaccineInfo.findIndex((vaccine) => vaccine.name.toLowerCase() == vaccineName.toLowerCase());
       let person = this.personInfo[index];
@@ -51,7 +59,9 @@ class VaccineCertificate {
         }
       }
       return person;
+
     } else {
+      console.warn(`[ERROR] ${personName} has not added yet.`);
       return;
     }
   }
