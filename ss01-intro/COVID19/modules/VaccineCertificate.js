@@ -48,7 +48,7 @@ class VaccineCertificate {
         person.poseStatus.push(Status);
         // ko đc tiêm quá 2 mũi
         if (person.poseStatus.length > 2) {
-          console.log(`${person.name}: Over dose suggested`);
+          console.warn(`${person.name}: Over dose suggested`);
         } else {
           // kiểm tra nhập trùng ngày tiêm -> chỉ lầy lần đầu
           let [state1, state2] = person.poseStatus;
@@ -58,9 +58,10 @@ class VaccineCertificate {
         }
       }
       return person;
-    } else {
+    } else if(index < 0) {
       console.warn(`[ERROR] ${personName} has not added yet.`);
-      return;
+    }else{
+      console.warn(`[ERROR] ${vaccineName} has not added yet.`);
     }
   }
 }
