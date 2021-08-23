@@ -54,14 +54,14 @@ function showVerified() {
 showVerified();
 
 // Thống kê những người già chưa được tiêm vắc-xin
-function showNotVerifiedByAge() {
+function showNotVerifiedByAge(group) {
   let people = vaccineCertificate.personInfo.filter((person) => {
-    return person.vaccineChecked == false && person.ageGroup == "Older";
+    return person.vaccineChecked == false && person.ageGroup.toLowerCase() == group.toLowerCase();
   });
   console.log("\n----Thống kê những người già chưa được tiêm vắc-xin----");
   console.table(people, ["name", "age", "address"]);
 }
-showNotVerifiedByAge();
+showNotVerifiedByAge("older");
 
 // Tính tổng số liều vắc-xin đã tiêm
 function totalPose() {
