@@ -14,12 +14,15 @@ export default class BaseComponent {
   /**
    * Hiển thị Nội dung Component lên màn hình
    *
-   * @return {Element}
+   * @return {HTMLElement}
    */
   render() {}
 
   /**
    * Thiết lập lại state của component và render lại component (khi state thay đổi, component render lại)
    */
-  setState(newState) {}
+   setState(newState) {
+    this.state = newState;
+    this.render();
+}
 }

@@ -4,11 +4,13 @@ export default class Navbar extends BaseComponent {
     super(props);
     this.state = {
       links: [
-        { href: "./home.html", name: "Home" },
-        { href: "./about.html", name: "About" },
-        { href: "./contact.html", name: "Contact" },
-        { href: "./signin.html", name: "Sign in" },
-        { href: "./signup.html", name: "Sign up" },
+        { name: "Home", href: "./home.html" },
+        { name: "About", href: "./about.html" },
+        { name: "Contact", href: "./contact.html" },
+        { name: "Forum", href: "./forum.html" },
+        { name: "Help", href: "./help.html" },
+        { name: "Sign In", href: "./sign-in.html" },
+        { name: "Sign Up", href: "./sign-up.html" },
       ],
     };
   }
@@ -24,6 +26,20 @@ export default class Navbar extends BaseComponent {
 
     let $nav = document.createElement("div");
     $nav.classList.add("navbar-nav");
+    
+    let $links = this.state.links.map((link) => {
+      let $a = document.createElement("a");
+      $a.classList.add("nav-link");
+      $a.innerHTML = link.name;
+      $a.href = link.href;
+      return $a;
+    });
+    // console.log($links);
+    $nav.append(...$links);
+
+    $container.append($brand, $nav);
+
+    return $container;
 
     // let $home = document.createElement("a");
     // $home.href = "./home.html";
@@ -39,28 +55,20 @@ export default class Navbar extends BaseComponent {
     // $contact.href = "./contact.html";
     // $contact.classList.add("navbar-link");
     // $contact.innerHTML = "Contact";
-    
+
     // $nav.append($home, $about, $contact);
-    
-    // for (const link of this.state.link) {
-    //   let $a = document.createElement("a");
-    //   $a.classList.add("nav-link");
-    //   $a.innerHTML = link.name;
 
+    // $ => lưu 1 DOM hoặc lưu nhiều DOM trong 1 mảng
+    // let $links = [];
+    // for (let link of this.state.links) {
+    //     let $a = document.createElement('a');
+    //     $a.classList.add('nav-link');
+    //     $a.innerHTML = link.name;
+    //     $a.href = link.href;
+
+    //     $links.push($a);
+    //     // $nav.append($a);
     // }
-    let $links = this.state.links.map((link) => {
-      let $a = document.createElement("a");
-      $a.classList.add("nav-link");
-      $a.innerHTML = link.name;
-      $a.href = link.href;
-      return $a;
-    });
-    console.log($links);
-    $nav.append(...$links);
-
-    $container.append($brand, $nav);
-
-    return $container;
 
     // JSX; js and XML
   }
