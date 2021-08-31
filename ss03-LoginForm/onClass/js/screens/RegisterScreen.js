@@ -2,6 +2,15 @@ import BaseComponent from "../components/BaseComponent.js";
 import inputWrapper from "../components/InputWrapper.js";
 
 export default class RegisterScreen extends BaseComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data:{
+        name: "",
+        email: ""
+      }
+    }
+  }
   render() {
     let $container = document.createElement("div");
     let $title = document.createElement("h1");
