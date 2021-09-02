@@ -2,15 +2,6 @@ import BaseComponent from "../components/BaseComponent.js";
 import inputWrapper from "../components/InputWrapper.js";
 
 export default class RegisterScreen extends BaseComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data:{
-        name: "",
-        email: ""
-      }
-    }
-  }
   render() {
     let $container = document.createElement("div");
     let $title = document.createElement("h1");
@@ -26,9 +17,9 @@ export default class RegisterScreen extends BaseComponent {
       },
       favorites: ["a", "b", "c"],
     });
-    let _email = new inputWrapper({ placeholder: "Email", type: "email", error: "",});
-    let _password = new inputWrapper({ placeholder: "Password", type: "password", error: "", });
-    let _confirmPassword = new inputWrapper({ placeholder: "Confirm Password", type: "password", error: "",});
+    let _email = new inputWrapper({ placeholder: "Email", type: "email", error: "" });
+    let _password = new inputWrapper({ placeholder: "Password", type: "password", error: "" });
+    let _confirmPassword = new inputWrapper({ placeholder: "Confirm Password", type: "password", error: "" });
 
     let $btn = document.createElement("button");
     $btn.innerHTML = "Register";
