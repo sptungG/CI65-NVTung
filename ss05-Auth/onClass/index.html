@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌃🌁🌇 Chatting</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- action: điểm đến để xử lý khi form submit -->
+    <!-- nếu ko có action thì mặc định action là trang hiện tại -> ~reload lại trang -->
+    <!-- <form action=""></form> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyCJErQzwph09c5qc4aWDmCl-6f8FID8uDc",
+        authDomain: "ci65-chatting.firebaseapp.com",
+        projectId: "ci65-chatting",
+        storageBucket: "ci65-chatting.appspot.com",
+        messagingSenderId: "914462577049",
+        appId: "1:914462577049:web:65a47a957077df89768308",
+      };
+
+      // Initialize Firebase
+      const firebaseApp = firebase.initializeApp(firebaseConfig);
+      // const app = initializeApp(firebaseConfig);
+      const db = firebaseApp.firestore();
+      const auth = firebaseApp.auth();
+    </script>
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
