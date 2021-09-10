@@ -1,0 +1,38 @@
+.cart {
+  width: 90vw;
+  margin: 0 auto;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.cart-item-image {
+  width: 22%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.cart-item-counter {
+  display: flex;
+  width: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+.complete-order {
+  display: flex;
+}
+.total-cost {
+  margin-left: auto;
+}
+.total-cost-number,
+.cart-item-title,
+.complete-order-button {
+  font-weight: 600;
+}
+.complete-order-button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  outline: none;
+}

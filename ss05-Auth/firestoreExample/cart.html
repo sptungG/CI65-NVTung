@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Setup Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://kit.fontawesome.com/7dd4672799.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="./CSS/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./CSS/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./CSS/cart.css" />
+  </head>
+  <body>
+
+    <section class="cart">
+      <header class="header">
+        <a href="index.html" title="Back to Store" style="font-size: 36px;" >Store</a>
+        <a class="cart-link" href="#" title="cart">
+          <div class="cart-icon">
+            <div class="cart-number"></div>
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+        </a>
+      </header>
+      <ul class="cart-items"></ul>
+      <div class="complete-order">
+        <div class="total-cost">
+          <h2 class="">Total Cost</h2>
+          <div class="total-cost-number">$0,00.00</div>
+          <button class="complete-order-button">Complete Order</button>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore-compat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script src="./JS/firebase.js"></script>
+    <script src="./JS/cart.js"></script>
+    <script src="./JS/header.js"></script>
+  </body>
+</html>
