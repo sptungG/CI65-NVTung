@@ -1,3 +1,26 @@
+const form = document.querySelector("#add-product-form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  db.collection("items")
+    .add({
+      image: form.image.value,
+      name: form.name.value,
+      make: form.make.value,
+      rating: form.rating.value,
+      price: form.price.value,
+    })
+    .then((docRef) => {
+      console.log("Document written with ID: ", docRef.id);
+    })
+    .catch((error) => {
+      console.error("Error adding document: ", error);
+    });
+  form.image.value = "";
+  form.name.value = "";
+  form.make.value = "";
+  form.rating.value = "";
+  form.price.value = "";
+});
 // Read
 function getItems() {
   db.collection("items")
@@ -7,11 +30,7 @@ function getItems() {
       querySnapshot.forEach((doc) => {
         items.push({
           id: doc.id,
-          image: doc.data().image,
-          name: doc.data().name,
-          make: doc.data().make,
-          rating: doc.data().rating,
-          price: doc.data().price,
+          ...doc.data(),
         });
       });
       console.log(items);
@@ -28,12 +47,12 @@ function generateItems(items) {
     <div class="product-name">${item.name}</div>
     <div class="product-brand">${item.make}</div>
     <div class="product-rating">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      ${item.rating}
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    ${item.rating}
     </div>
     <div class="product-price">${numeral(item.price).format("$0,0.00")}</div>
     `;
@@ -44,7 +63,18 @@ function generateItems(items) {
     addToCartEl.addEventListener("click", function () {
       addToCart(item);
     });
+
+    let deleteButton = document.createElement("div");
+    deleteButton.classList.add("product-delete");
+    deleteButton.innerHTML = `<i class="fas fa-times"></i>`;
+    deleteButton.setAttribute("data-id", `${item.id}`);
+    deleteButton.addEventListener("click", function () {
+      // deleteItem(deleteButton.dataset.id);
+      console.log("Delete Nothing");
+    });
+
     doc.appendChild(addToCartEl);
+    doc.appendChild(deleteButton);
     document.querySelector(".products").appendChild(doc);
   });
 }
@@ -67,5 +97,9 @@ function addToCart(item) {
       });
     }
   });
+}
+function deleteItem(itemId) {
+  db.collection("items").doc(itemId).delete();
+  console.log(db.collection("items").doc(itemId));
 }
 getItems();
