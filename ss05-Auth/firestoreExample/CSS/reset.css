@@ -47,6 +47,7 @@ select {
 
 button {
   cursor: pointer;
+  font-weight: bold;
 }
 ul{
   list-style: none;
