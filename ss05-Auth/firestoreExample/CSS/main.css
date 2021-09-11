@@ -152,6 +152,12 @@
   .product {
     width: calc(50% - 20px);
   }
+  .create-product{
+    display: none;
+  }
+  .product-delete{
+    display: none;
+  }
 }
 @media screen and (max-width: 767px) {
   .products{

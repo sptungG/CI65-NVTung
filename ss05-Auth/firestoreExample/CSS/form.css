@@ -60,6 +60,11 @@
   align-items: center;
   margin-bottom: 10px;
 }
+@media screen and (max-width: 1023px) {
+  .form-wrapper {
+    display: none;
+  }
+}
 @media screen and (max-width: 767px) {
   .form-wrapper {
     padding: 10px;
