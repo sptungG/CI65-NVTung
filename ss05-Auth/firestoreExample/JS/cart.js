@@ -1,6 +1,6 @@
 // Read 
 function getCartItems() {
-  db.collection("cart-items").onSnapshot((snapshot) => {
+  db.collection("cart-items").orderBy("name").onSnapshot((snapshot) => {
     let cartItems = [];
     snapshot.docs.forEach((doc) => {
       cartItems.push({

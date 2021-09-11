@@ -1,7 +1,19 @@
 // Read
-function getItems() {
-  db.collection("items").get();
-}
+  function getItems() {
+    db.collection("items")
+      .get()
+      .then((querySnapshot) => {
+        let items = [];
+        querySnapshot.forEach((doc) => {
+          items.push({
+            id: doc.id,
+            ...doc.data(),
+          });
+        });
+        console.log("Total product: ", items.length);
+      });
+  }
+  getItems();
 // Render Items
 function generateItem(item) {
   let doc = document.createElement("li");
