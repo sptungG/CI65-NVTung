@@ -2,18 +2,29 @@
 const form = document.querySelector("#add-product-form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  db.collection("items")
-    .add({
-      image: form.image.value,
-      name: form.name.value,
-      make: form.make.value,
-      rating: form.rating.value,
-      price: form.price.value,
-    })
-    .then((docRef) => {
-      console.log("Document written with ID: ", docRef.id);
-    })
-    .catch((error) => {
-      console.error("Error adding document: ", error);
-    });
+  const product = {
+    image: form.image.value,
+    name: form.name.value,
+    make: form.make.value,
+    rating: form.rating.value,
+    price: form.price.value,
+  };
+  db.collection("items").add(product);
 });
+
+// Realtime Listener
+db.collection("items")
+  .orderBy("name")
+  .onSnapshot((snapshot) => {
+    let changes = snapshot.docChanges();
+    changes.forEach((change) => {
+      console.log(change.doc.data());
+      if (change.type == "added") {
+        generateItem(change.doc);
+      } else if (change.type == "removed") {
+        let productsList = document.querySelector(".products");
+        let li = productsList.querySelector(`[data-id="${change.doc.id}"]`);
+        productsList.removeChild(li);
+      }
+    });
+  });
