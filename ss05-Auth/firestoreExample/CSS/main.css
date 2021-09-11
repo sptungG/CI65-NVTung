@@ -1,6 +1,5 @@
-.store {
-  width: 90vw;
-  margin: 0 auto;
+.store{
+  width: 100%;
 }
 .header {
   display: flex;
@@ -58,13 +57,16 @@
   flex-wrap: wrap;
 }
 .product {
-  width: calc(16.6% - 20px);
+  width: calc(20% - 20px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 20px;
-  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
   position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 10px;
 }
 @media screen and (max-width: 767px) {
   .product {
@@ -79,15 +81,16 @@
 
 .product-image {
   width: 100%;
-  max-height: 200px;
+  height: 180px;
+  border-radius: 10px;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   object-fit: cover;
 }
 
-.product-name,
+
+.product-name{
+  margin-top: 10px;
+}
 .product-rating,
 .product-brand,
 .product-price,

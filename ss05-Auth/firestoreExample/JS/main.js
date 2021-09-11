@@ -1,26 +1,3 @@
-const form = document.querySelector("#add-product-form");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  db.collection("items")
-    .add({
-      image: form.image.value,
-      name: form.name.value,
-      make: form.make.value,
-      rating: form.rating.value,
-      price: form.price.value,
-    })
-    .then((docRef) => {
-      console.log("Document written with ID: ", docRef.id);
-    })
-    .catch((error) => {
-      console.error("Error adding document: ", error);
-    });
-  form.image.value = "";
-  form.name.value = "";
-  form.make.value = "";
-  form.rating.value = "";
-  form.price.value = "";
-});
 // Read
 function getItems() {
   db.collection("items")
@@ -40,7 +17,7 @@ function getItems() {
 // Render Items
 function generateItems(items) {
   items.forEach((item) => {
-    let doc = document.createElement("div");
+    let doc = document.createElement("li");
     doc.classList.add("product");
     doc.innerHTML = `
     <div class="product-image"><img src="${item.image}" alt=""></div>
@@ -62,6 +39,7 @@ function generateItems(items) {
     addToCartEl.innerHTML = "Add to cart";
     addToCartEl.addEventListener("click", function () {
       addToCart(item);
+      console.log("Add to cart: ", item);
     });
 
     let deleteButton = document.createElement("div");
@@ -69,8 +47,8 @@ function generateItems(items) {
     deleteButton.innerHTML = `<i class="fas fa-times"></i>`;
     deleteButton.setAttribute("data-id", `${item.id}`);
     deleteButton.addEventListener("click", function () {
-      // deleteItem(deleteButton.dataset.id);
-      console.log("Delete Nothing");
+      deleteItem(deleteButton.dataset.id);
+      console.log("Removed:", item);
     });
 
     doc.appendChild(addToCartEl);
@@ -100,6 +78,6 @@ function addToCart(item) {
 }
 function deleteItem(itemId) {
   db.collection("items").doc(itemId).delete();
-  console.log(db.collection("items").doc(itemId));
 }
+
 getItems();

@@ -40,7 +40,8 @@
   color: orange;
 }
 .form-wrapper{
-  width: 60%;
+  width: 100%;
+  padding: 20px;
 }
 .add-product-form {
   display: flex;
@@ -52,11 +53,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 }
 
-@media screen and (max-width: 1023px) {
-  .form-wrapper{
-    width: 100%;
-  }
-}
 

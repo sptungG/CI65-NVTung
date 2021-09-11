@@ -14,7 +14,7 @@
     <section class="store">
       <header class="header">
         <span style="font-size: 36px">Store</span>
-        <a class="create-product" href="#">Create product <i class="fas fa-plus-circle"></i></a>
+        <a class="create-product" href="#create-product">Create product <i class="fas fa-plus-circle"></i></a>
         <a class="cart-link" href="cart.html" title="cart">
           <div class="cart-icon">
             <div class="cart-number"></div>
@@ -22,44 +22,46 @@
           </div>
         </a>
       </header>
-      <section id="#" class="products"></section>
-      <div class="form-wrapper">
-        <h3>Product</h3>
-        <form id="add-product-form" class="add-product-form">
-          <div class="div1">
-            <div class="text-field">
-              <label for="name">Name</label>
-              <input autocomplete="off" type="text" name="name" placeholder="Product Name..." value="Macbook" />
-            </div>
-            <div class="text-field">
-              <label for="make">Brand</label>
-              <input autocomplete="off" type="text" name="make" placeholder="Brand ..." value="Apple"/>
-            </div>
-          </div>
-          <div class="div2">
-            <div class="text-field">
-              <label for="rating">Rating</label>
-              <input autocomplete="off" type="number" name="rating" min="1" max="5" placeholder="Rating 1 to 5..." value="5"/>
-            </div>
-            <div class="text-field">
-              <label for="price">Price</label>
-              <input autocomplete="off" type="number" name="price" placeholder="Price..." value="100"/>
-            </div>
+      <ul class="products"></ul>
+    </section>
+    
+    <div class="form-wrapper" id="create-product">
+      <h3>Product</h3>
+      <form id="add-product-form" class="add-product-form">
+        <div class="div1">
+          <div class="text-field">
+            <label for="name">Name</label>
+            <input autocomplete="off" type="text" name="name" placeholder="Product Name..."/>
           </div>
           <div class="text-field">
-            <label for="image">Image</label>
-            <input autocomplete="off" type="text" name="image" placeholder="Image Link..." value="https://source.unsplash.com/random/?setup,desk" />
+            <label for="make">Brand</label>
+            <input autocomplete="off" type="text" name="make" placeholder="Brand ..."/>
           </div>
-          <button class="buttonSubmit" type="submit">Add Product</button>
-        </form>
-      </div>
-    </section>
+        </div>
+        <div class="div2">
+          <div class="text-field">
+            <label for="rating">Rating</label>
+            <input autocomplete="off" type="number" name="rating" min="1" max="5" placeholder="Rating 1 to 5..."/>
+          </div>
+          <div class="text-field">
+            <label for="price">Price</label>
+            <input autocomplete="off" type="number" name="price" placeholder="Price..."/>
+          </div>
+        </div>
+        <div class="text-field">
+          <label for="image">Image</label>
+          <input autocomplete="off" type="text" name="image" placeholder="Image Link..."/>
+        </div>
+        <button class="buttonSubmit" type="submit">Add Product</button>
+      </form>
+    </div>
 
 
     <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore-compat.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
     <script src="./JS/firebase.js"></script>
+    <script src="./JS/form.js"></script>
     <script src="./JS/main.js"></script>
     <script src="./JS/header.js"></script>
   </body>

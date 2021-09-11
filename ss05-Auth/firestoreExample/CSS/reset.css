@@ -14,6 +14,8 @@ body {
   font-size: 14px;
   overflow-x: hidden;
   font-weight: 300;
+  max-width: 1000px;
+  margin: 0 auto; 
 }
 
 img {

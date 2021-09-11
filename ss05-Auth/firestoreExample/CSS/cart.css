@@ -7,11 +7,17 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5px;
+  height: 160px;
+  overflow: hidden;
 }
 .cart-item-image {
-  width: 22%;
+  width: 200px;
+  height: 100%;
   flex-shrink: 0;
   object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .cart-item-counter {
   display: flex;
