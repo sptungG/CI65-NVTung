@@ -1,6 +1,7 @@
 .cart {
   margin: 0 auto;
   padding: 0 20px;
+  padding-bottom: 20px;
 }
 .cart-items {
   padding-left: 0;
@@ -65,9 +66,11 @@
   margin-top: 10px;
   border-radius: 10px;
   outline: none;
+  color: orange;
+  background-color: rgba(255, 165, 0, 0.25);
 }
 @media screen and (max-width: 767px) {
-  .cart-item{
+  .cart-item {
     flex-direction: column;
     flex-grow: 1;
   }
@@ -78,14 +81,18 @@
   .cart-item-counter {
     width: 100px;
   }
-  .total-cost{
+  .total-cost {
+    padding: 10px;
     position: fixed;
     width: 34%;
     bottom: 0;
     right: 0;
     background-color: rgba(70, 64, 64, 0.4);
-    padding: 10px;
     border-radius: 20px 0 0 0;
+    z-index: 10;
+  }
+  .complete-order-button {
+    background-color: #e4e4e4;
+    color: #111;
   }
 }
-
