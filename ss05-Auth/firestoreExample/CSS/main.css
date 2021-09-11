@@ -21,7 +21,7 @@
   border-radius: 10px;
   font-weight: 600;
   color: #222;
-  background-color: rgba(153, 153, 153, 0.2);
+  background-color: rgb(172, 172, 172);
   border: 1px solid transparent;
 }
 .create-product:hover{
