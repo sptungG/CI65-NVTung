@@ -1,19 +1,19 @@
 // Read
-  function getItems() {
-    db.collection("items")
-      .get()
-      .then((querySnapshot) => {
-        let items = [];
-        querySnapshot.forEach((doc) => {
-          items.push({
-            id: doc.id,
-            ...doc.data(),
-          });
+function getItems() {
+  db.collection("items")
+    .get()
+    .then((querySnapshot) => {
+      let items = [];
+      querySnapshot.forEach((doc) => {
+        items.push({
+          id: doc.id,
+          ...doc.data(),
         });
-        console.log("Total product: ", items.length);
       });
-  }
-  getItems();
+      console.log("Total product: ", items.length);
+    });
+}
+getItems();
 // Render Items
 function generateItem(item) {
   let doc = document.createElement("li");
@@ -43,7 +43,7 @@ function generateItem(item) {
   });
 
   let deleteButton = document.createElement("div");
-  deleteButton.classList.add("product-delete");
+  deleteButton.classList.add("product-delete", "delete-btn");
   deleteButton.innerHTML = `<i class="fas fa-times"></i>`;
   deleteButton.addEventListener("click", function () {
     deleteItem(item.id);

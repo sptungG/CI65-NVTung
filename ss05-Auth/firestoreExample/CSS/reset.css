@@ -64,3 +64,31 @@ button:hover{
   background-color: rgba(255, 165, 0, 0.2);
   border: 1px solid currentColor;
 }
+.delete-btn{
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e4e4e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.delete-btn:hover{
+  color: red;
+  background-color: rgba(255, 0, 0, 0.4);
+  border: 1px solid currentColor;
+}
+.update-btn{
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.update-btn:hover{
+  color: orange;
+}

@@ -7,8 +7,8 @@ function getCartItems() {
         id: doc.id,
         ...doc.data(),
       });
-      console.log("Added: ", doc.data());
     });
+    console.log("Added: ", cartItems);
     generateCartItems(cartItems);
     getTotalCost(cartItems);
   });
@@ -30,7 +30,7 @@ function generateCartItems(cartItems) {
       <div data-id="${item.id}" class="cart-item-increase"><i class="fas fa-chevron-right"></i></div>
     </div>
     <div class="cart-item-total-cost">${numeral(item.quantity * item.price).format("$0,0.00")}</div>
-    <div data-id="${item.id}" class="cart-item-delete"><i class="fas fa-times"></i></div>
+    <div data-id="${item.id}" class="cart-item-delete delete-btn"><i class="fas fa-times"></i></div>
     </li>
     `;
   });

@@ -35,21 +35,6 @@
   justify-content: space-between;
   align-items: center;
 }
-.cart-item-delete {
-  font-size: 20px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: #e4e4e4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.cart-item-delete:hover {
-  color: red;
-  background-color: rgba(255, 0, 0, 0.4);
-  border: 1px solid currentColor;
-}
 .complete-order {
   display: flex;
 }

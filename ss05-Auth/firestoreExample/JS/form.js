@@ -13,19 +13,19 @@ form.addEventListener("submit", (e) => {
 });
 
 // Realtime Listener
-  db.collection("items")
-    .orderBy("name")
-    .onSnapshot((snapshot) => {
-      let changes = snapshot.docChanges();
-      changes.forEach((change) => {
-        if (change.type == "added") {
-          generateItem(change.doc);
-          console.log("Added: ", change.doc.data());
-        } else if (change.type == "removed") {
-          let productsList = document.querySelector(".products");
-          let li = productsList.querySelector(`[data-id="${change.doc.id}"]`);
-          productsList.removeChild(li);
-          console.log("Removed: ", change.doc.data());
-        }
-      });
+db.collection("items")
+  .orderBy("name")
+  .onSnapshot((snapshot) => {
+    let changes = snapshot.docChanges();
+    changes.forEach((change) => {
+      if (change.type === "added") {
+        generateItem(change.doc);
+        console.log("Added: ", change.doc.data());
+      } else if (change.type === "removed") {
+        let productsList = document.querySelector(".products");
+        let li = productsList.querySelector(`[data-id="${change.doc.id}"]`);
+        productsList.removeChild(li);
+        console.log("Removed: ", change.doc.data());
+      }
     });
+  });
