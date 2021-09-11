@@ -117,15 +117,6 @@
 .product-price{
   margin-bottom: 10px;
 }
-.product-cart {
-  border-radius: 10px;
-  background-color: #fff;
-}
-.product-cart:hover {
-  color: rgb(255, 153, 0);
-  font-weight: 500;
-  border: 1px solid currentColor;
-}
 .product-delete{
   font-size: 20px;
   position: absolute;

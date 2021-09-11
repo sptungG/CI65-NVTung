@@ -47,8 +47,20 @@ select {
 
 button {
   cursor: pointer;
-  font-weight: bold;
 }
 ul{
   list-style: none;
+}
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #222;
+  background-color: rgb(172, 172, 172);
+  border: 1px solid transparent;
+}
+button:hover{
+  color: orange;
+  background-color: rgba(255, 165, 0, 0.2);
+  border: 1px solid currentColor;
 }

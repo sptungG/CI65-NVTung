@@ -57,17 +57,14 @@
   margin-left: auto;
 }
 .total-cost-number,
-.cart-item-title,
-.complete-order-button {
+.cart-item-title{
   font-weight: 600;
 }
 .complete-order-button {
-  padding: 10px 20px;
   margin-top: 10px;
-  border-radius: 10px;
-  outline: none;
-  color: orange;
-  background-color: rgba(255, 165, 0, 0.25);
+}
+.complete-order-button:hover{
+  background-color: #e4e4e4;
 }
 @media screen and (max-width: 767px) {
   .cart-item {
