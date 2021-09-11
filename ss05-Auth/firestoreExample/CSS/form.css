@@ -39,7 +39,7 @@
 .buttonSubmit:hover {
   color: orange;
 }
-.form-wrapper{
+.form-wrapper {
   width: 100%;
   padding: 20px;
 }
@@ -55,5 +55,8 @@
   align-items: center;
   margin-bottom: 10px;
 }
-
-
+@media screen and (max-width: 767px) {
+  .form-wrapper {
+    padding: 10px;
+  }
+}
