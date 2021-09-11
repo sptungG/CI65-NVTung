@@ -84,7 +84,10 @@
   height: 180px;
   border-radius: 10px;
   overflow: hidden;
+}
+.product-image > img{
   object-fit: cover;
+  object-position: center;
 }
 
 
@@ -92,7 +95,6 @@
   margin-top: 10px;
 }
 .product-rating,
-.product-brand,
 .product-price,
 .product-cart {
   margin-top: auto;

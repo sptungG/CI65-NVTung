@@ -18,13 +18,14 @@ db.collection("items")
   .onSnapshot((snapshot) => {
     let changes = snapshot.docChanges();
     changes.forEach((change) => {
-      console.log(change.doc.data());
       if (change.type == "added") {
         generateItem(change.doc);
+        console.log("Added: ", change.doc.data());
       } else if (change.type == "removed") {
         let productsList = document.querySelector(".products");
         let li = productsList.querySelector(`[data-id="${change.doc.id}"]`);
         productsList.removeChild(li);
+        console.log("Removed: ", change.doc.data());
       }
     });
   });

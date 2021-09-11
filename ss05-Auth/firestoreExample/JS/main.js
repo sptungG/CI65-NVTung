@@ -1,12 +1,6 @@
 // Read
 function getItems() {
-  db.collection("items")
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        generateItem(doc);
-      });
-    });
+  db.collection("items").get();
 }
 // Render Items
 function generateItem(item) {
@@ -33,7 +27,7 @@ function generateItem(item) {
   addToCartEl.innerHTML = "Add to cart";
   addToCartEl.addEventListener("click", function () {
     addToCart(item);
-    console.log("Add to cart: ", item);
+    console.log("Add to cart: ", item.data());
   });
 
   let deleteButton = document.createElement("div");
@@ -41,7 +35,6 @@ function generateItem(item) {
   deleteButton.innerHTML = `<i class="fas fa-times"></i>`;
   deleteButton.addEventListener("click", function () {
     deleteItem(item.id);
-    console.log("Removed:", item);
   });
 
   doc.append(addToCartEl, deleteButton);
@@ -56,7 +49,6 @@ function addToCart(item) {
         quantity: doc.data().quantity + 1,
       });
     } else {
-      console.log(doc, doc.data());
       cartItem.set({
         image: item.data().image,
         make: item.data().make,
@@ -73,4 +65,3 @@ function deleteItem(itemId) {
   db.collection("items").doc(itemId).delete();
   db.collection("cart-items").doc(itemId).delete();
 }
-

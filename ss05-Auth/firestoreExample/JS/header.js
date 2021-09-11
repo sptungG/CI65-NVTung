@@ -4,7 +4,7 @@ function getCartItems() {
     snapshot.forEach((doc) => {
       totalCount += doc.data().quantity;
     });
-    console.log(totalCount);
+    console.log("Current cart items: ",totalCount);
     setCartCounter(totalCount);
   });
 }
